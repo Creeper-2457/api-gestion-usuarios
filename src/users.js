@@ -1,8 +1,13 @@
 
 let userList = [];
 
-exports.getUsers = (req, res) => {
-    res.json(userList);
+const createUser = (req, res) => {
+    const user = req.body;
+    if (!user.name || !user.age) {
+        return res.status(400).json({ error: 'Nombre y edad son requeridos' });
+    }
+    users.push(user);
+    res.status(201).json(user);
 };
 
 exports.createUser = (req, res) => {
