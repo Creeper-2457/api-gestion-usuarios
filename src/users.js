@@ -10,3 +10,4 @@ exports.createUser = (req, res) => {
     userList.push(newUser);
     res.status(201).send(newUser);
 };
+module.exports = { getUsers };
