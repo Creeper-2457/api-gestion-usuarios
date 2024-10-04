@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-const users = require('./users');
+const PORT = process.env.PORT || 3000;
 
-app.get('/users', users.getUsers);
-app.post('/users', users.createUser);
-app.listen(3000, () => {
-    console.log('Server running on port 3000');
+app.use(express.json());
+
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
 
